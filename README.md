@@ -149,7 +149,7 @@ ai-camera/
 
 ## 👤 Author
 
-**Project by:** [Your Name]  
+**Project by:** Lav Kalsi 
 **Inspired by:** ESP32-CAM, OpenAI Vision, and DIY hardware innovation
 
 ---
