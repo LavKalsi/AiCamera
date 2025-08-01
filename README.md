@@ -23,9 +23,6 @@ On a button press, the camera:
   <img src="Images/Circuit.jpg" alt="Sample Image 3" width="200"/>
 </p>
 
-
-Upload your output images to the `images/` folder or link hosted images.
-
 ---
 
 ## 🔧 Features
@@ -128,7 +125,7 @@ Describe the main object(s) in this image. If the image is blurry or unclear, gu
 
 ```
 ai-camera/
-├── ai_camera.ino              # Main Arduino code
+├── ai_camera/ai_camera.ino              # Main Arduino code
 ├── README.md                  # This file
 ├── images/
 │   ├── ai-camera-setup.jpg    # Physical camera photo
