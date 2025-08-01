@@ -12,7 +12,7 @@ On a button press, the camera:
 ## 🖼️ Project Preview
 
 ### Physical Build Image
-> ![AI Camera Setup](Images/Showcase.jpg)
+<img src="Images/Showcase.jpg" alt="Sample Image 1" width="600"/>
 
 ### Sample Output Images
 <p align="center">
