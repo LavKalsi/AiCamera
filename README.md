@@ -12,15 +12,15 @@ On a button press, the camera:
 ## 🖼️ Project Preview
 
 ### Physical Build Image
-> 📷 Insert a photo of your camera setup below  
 > ![AI Camera Setup](Images/Showcase.jpg)
 
 ### Sample Output Images
-> 📸 Example output from ESP32-CAM and AI analysis:
+<p align="center">
+  <img src="Images/Front.jpg" alt="Sample Image 1" width="200"/>
+  <img src="Images/Back.jpg" alt="Sample Image 2" width="200"/>
+  <img src="Images/Circuit.jpg" alt="Sample Image 3" width="200"/>
+</p>
 
-1. ![Sample Image 1](Images/Front.jpg)
-2. ![Sample Image 2](Images/Back.jpg)
-3. ![Sample Image 3](Images/Circuit.jpg)
 
 Upload your output images to the `images/` folder or link hosted images.
 
