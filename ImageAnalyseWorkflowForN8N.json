@@ -1,0 +1,124 @@
+{
+  "name": "AI Camera",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "690a8ca4-5136-4216-bddf-595fd4c4cf5c",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        48,
+        48
+      ],
+      "id": "bd94e63e-433d-4db5-a3c2-7caf3b7a19f6",
+      "name": "Webhook",
+      "webhookId": "690a8ca4-5136-4216-bddf-595fd4c4cf5c"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Fix binary file to be treated as JPEG\nconst binary = items[0].binary.data;\n\nbinary.mimeType = 'image/jpeg';\nbinary.fileName = 'camera.jpg'; // or anything ending in .jpg\n\nreturn [\n  {\n    binary: {\n      data: binary\n    }\n  }\n];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        256,
+        48
+      ],
+      "id": "480ec361-70be-49b5-8cc4-2c2bf1c7ede6",
+      "name": "Code"
+    },
+    {
+      "parameters": {
+        "resource": "image",
+        "operation": "analyze",
+        "modelId": {
+          "__rl": true,
+          "value": "chatgpt-4o-latest",
+          "mode": "list",
+          "cachedResultName": "CHATGPT-4O-LATEST"
+        },
+        "text": "=Look at the image and identify the main object that appears to be the focus.\n\n- If you can clearly identify the focused object, return only its name (e.g., \"fitness tracker\", \"smartphone\", \"bottle\").\n- If no clear focus exists, return the names of one or two of the largest or most prominent objects.\n- If the image is too blurry or unclear, respond with: \"unclear\"\n\nDo not return any explanation or description — only the object name(s) as a short comma-separated list if more than one.\n",
+        "inputType": "base64",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        464,
+        48
+      ],
+      "id": "2a920b2e-cee4-45cc-a2e3-73cc6954cfec",
+      "name": "Analyze image",
+      "credentials": {
+        "openAiApi": {
+          "id": "NgkFGD5Km820eEju",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.4,
+      "position": [
+        672,
+        48
+      ],
+      "id": "38a5ff65-755a-4b81-84e2-523f0c6352be",
+      "name": "Respond to Webhook"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "Analyze image",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Analyze image": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "6e370361-d078-4ef6-a290-ad0d4c7971fe",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "8f2ccee7eb2f99dde03bfe575b18d4b90d34cb477a1537ad9f8390d839414f83"
+  },
+  "id": "SGYdbUfcjIlE36M3",
+  "tags": []
+}
