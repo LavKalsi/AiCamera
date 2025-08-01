@@ -12,7 +12,9 @@ On a button press, the camera:
 ## 🖼️ Project Preview
 
 ### Physical Build Image
-<img src="Images/Showcase.jpg" alt="Sample Image 1" width="600"/>
+<p align="center">
+  <img src="Images/Showcase.jpg" alt="Sample Image 1" width="600"/>
+</p>
 
 ### Sample Output Images
 <p align="center">
