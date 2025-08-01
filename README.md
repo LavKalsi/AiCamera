@@ -13,14 +13,14 @@ On a button press, the camera:
 
 ### Physical Build Image
 > 📷 Insert a photo of your camera setup below  
-> ![AI Camera Setup](images/ai-camera-setup.jpg)
+> ![AI Camera Setup](Images/Showcase.jpg)
 
 ### Sample Output Images
 > 📸 Example output from ESP32-CAM and AI analysis:
 
-1. ![Sample Image 1](images/sample1.jpg)
-2. ![Sample Image 2](images/sample2.jpg)
-3. ![Sample Image 3](images/sample3.jpg)
+1. ![Sample Image 1](Images/Front.jpg)
+2. ![Sample Image 2](Images/Back.jpg)
+3. ![Sample Image 3](Images/Circuit.jpg)
 
 Upload your output images to the `images/` folder or link hosted images.
 
